@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "name": "Oracle public catalog pilot retrieval checks",
+  "label_status": "Source-anchored development judgments reviewed against indexed repository descriptions; not an independent or exhaustive relevance benchmark. Team review and held-out cases are required before an accuracy claim.",
+  "cases": [
+    {
+      "id": "mcp-agent-tools",
+      "kind": "positive",
+      "query": "Expose reusable tools to AI agents through MCP servers",
+      "expected": [{"repository": "oracle-samples/mcp-examples", "component": ""}],
+      "judgment_reason": "The repository describes prototypes and examples related to AI agents and MCP servers.",
+      "source_url": "https://github.com/oracle-samples/mcp-examples/blob/ca6c3978332c6c83c793906e392f3e02b8fabd0d/README.md"
+    },
+    {
+      "id": "property-graph",
+      "kind": "positive",
+      "query": "Explore property graph algorithms and graph analytics in Oracle Database",
+      "expected": [{"repository": "oracle-samples/oracle-graph", "component": ""}],
+      "judgment_reason": "The repository describes graph demos, AI notebooks, and Oracle Graph algorithm samples.",
+      "source_url": "https://github.com/oracle-samples/oracle-graph/blob/864dd4d10cc26865ffd386c6d44dfed9e0ea0466/README.md"
+    },
+    {
+      "id": "grafana-metrics",
+      "kind": "positive",
+      "query": "Display Oracle database metrics in a Grafana dashboard",
+      "expected": [{"repository": "oracle-samples/oracle-telemetry-streaming", "component": ""}],
+      "judgment_reason": "The repository describes a Grafana datasource plugin for Oracle database telemetry and metrics visualization.",
+      "source_url": "https://github.com/oracle-samples/oracle-telemetry-streaming/blob/c6c013780205a39cbad3b3b940cef255155ce550/README.md"
+    },
+    {
+      "id": "cost-report-loading",
+      "kind": "positive",
+      "query": "Load OCI cost and usage reports into an autonomous data warehouse using Python",
+      "expected": [{"repository": "oracle-samples/usage-reports-to-adw", "component": ""}],
+      "judgment_reason": "The repository describes a Python SDK tool that extracts tenancy usage and cost reports and loads them to Oracle Autonomous Database.",
+      "source_url": "https://github.com/oracle-samples/usage-reports-to-adw/blob/c0e85d884ee5ebe95168270b8546ebb31cfa0b7e/README.md"
+    },
+    {
+      "id": "apex-security",
+      "kind": "positive",
+      "query": "Scan APEX applications for security vulnerabilities and track remediation",
+      "expected": [{"repository": "oracle-samples/apex-sert", "component": ""}],
+      "judgment_reason": "The repository describes an APEX security scanner, direct issue resolution, and progress tracking.",
+      "source_url": "https://github.com/oracle-samples/apex-sert/blob/57af81d3c1539dc77b7e4ce383292339254adbb9/README.md"
+    },
+    {
+      "id": "go-orm-driver",
+      "kind": "positive",
+      "query": "Use Oracle Database from a Go application through the GORM ORM",
+      "expected": [{"repository": "oracle-samples/gorm-oracle", "component": ""}],
+      "judgment_reason": "The repository describes an Oracle GORM driver providing ORM support for Go applications.",
+      "source_url": "https://github.com/oracle-samples/gorm-oracle/blob/f3031b4354176c9b99f581a92c68acdd0755a873/README.md"
+    },
+    {
+      "id": "ansible-automation",
+      "kind": "positive",
+      "query": "Automate Oracle infrastructure configuration using Ansible playbooks",
+      "expected": [{"repository": "oracle-samples/ansible-playbooks", "component": ""}],
+      "judgment_reason": "The repository is an Oracle Ansible playbook collection.",
+      "source_url": "https://github.com/oracle-samples/ansible-playbooks/blob/6bef851cfeab768c6e0182f1088252dfb75983f7/README.md"
+    },
+    {
+      "id": "node-red-integrations",
+      "kind": "positive",
+      "query": "Connect Node-RED workflows to Oracle Database and OCI services",
+      "expected": [{"repository": "oracle-samples/node-red-nodes", "component": ""}],
+      "judgment_reason": "The repository describes custom Node-RED nodes integrating Oracle Database, queues, Fusion SCM, and OCI services.",
+      "source_url": "https://github.com/oracle-samples/node-red-nodes/blob/cfcf58aa1a6b0139c23336c7ea5c75f81a4b45cb/README.md"
+    },
+    {
+      "id": "java-llm-sql-chains",
+      "kind": "positive",
+      "query": "Use LangChain in Java with OCI Generative AI and Oracle SQL chains",
+      "expected": [{"repository": "oracle-samples/genai-langchainjava-sample", "component": ""}],
+      "judgment_reason": "The repository describes LangChain Java with OCI Gen AI and support for HTTP request and Oracle Database SQL chains.",
+      "source_url": "https://github.com/oracle-samples/genai-langchainjava-sample/blob/5405c00066d133f5291608b2274eac6ab31e1eec/README.md"
+    },
+    {
+      "id": "disaster-recovery-orchestration",
+      "kind": "positive",
+      "query": "Orchestrate disaster recovery across infrastructure database and applications in OCI",
+      "expected": [{"repository": "oracle-samples/full-stack-disaster-recovery", "component": ""}],
+      "judgment_reason": "The repository describes OCI disaster recovery orchestration across infrastructure, middleware, databases, and applications.",
+      "source_url": "https://github.com/oracle-samples/full-stack-disaster-recovery/blob/a410817bd03b2969fba21650eb53137a7b08862d/README.md"
+    },
+    {
+      "id": "unrelated-knitting",
+      "kind": "no_match",
+      "query": "Teach me to knit a wool scarf with a rib stitch",
+      "expected": [],
+      "judgment_reason": "An intentionally unrelated craft request for testing abstention on this software catalog. This is a pilot no-match judgment."
+    },
+    {
+      "id": "unrelated-baking",
+      "kind": "no_match",
+      "query": "Give me a sourdough bread recipe with flour and a starter",
+      "expected": [],
+      "judgment_reason": "An intentionally unrelated cooking request for testing abstention on this software catalog. This is a pilot no-match judgment."
+    },
+    {
+      "id": "unrelated-gardening",
+      "kind": "no_match",
+      "query": "How should I prune rose bushes in a small garden",
+      "expected": [],
+      "judgment_reason": "An intentionally unrelated gardening request for testing abstention on this software catalog. This is a pilot no-match judgment."
+    }
+  ]
+}

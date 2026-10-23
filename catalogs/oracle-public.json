@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "description": "Selected public Oracle repositories and LiveLabs components for reusable-solution discovery. Repository capabilities must be assessed from the indexed evidence.",
+  "sources": [
+    {"repository": "oracle-livelabs/database", "component": "ai-vector-rag"},
+    {"repository": "oracle-livelabs/developer", "component": "db-operator-k8s"},
+    {"repository": "oracle-livelabs/adb", "component": "rest-services-for-adb"},
+    {"repository": "oracle-livelabs/analytics-ai", "component": "generative-ai-rag-llama-index"},
+    {"repository": "oracle-livelabs/aichatbot", "component": ""},
+    {"repository": "oracle-samples/mcp-examples", "component": ""},
+    {"repository": "oracle-samples/genai-langchainjava-sample", "component": ""},
+    {"repository": "oracle-samples/oracle-graph", "component": ""},
+    {"repository": "oracle-samples/node-red-nodes", "component": ""},
+    {"repository": "oracle-samples/usage-reports-to-adw", "component": ""},
+    {"repository": "oracle-samples/oci-genai-auth-python", "component": ""},
+    {"repository": "oracle-samples/oci-genai-auth-java", "component": ""},
+    {"repository": "oracle-samples/oracle-telemetry-streaming", "component": ""},
+    {"repository": "oracle-samples/gorm-oracle", "component": ""},
+    {"repository": "oracle-samples/ansible-playbooks", "component": ""},
+    {"repository": "oracle-samples/apex-sert", "component": ""},
+    {"repository": "oracle-samples/oracle-dis-samples", "component": ""},
+    {"repository": "oracle-samples/full-stack-disaster-recovery", "component": ""},
+    {"repository": "oracle-samples/gdk-micronaut-samples", "component": ""},
+    {"repository": "oracle-samples/ofs-plugin-core", "component": ""}
+  ]
+}

@@ -1,0 +1,133 @@
+INNOVATION FARMING - TEAM HANDOFF
+
+This is a standalone local application. A prepared demo ZIP includes a catalog
+of 20 public Oracle repositories/components. A Git checkout includes the source
+list and starts with an empty database; use the catalog import steps below.
+
+START ON WINDOWS
+1. Extract the ZIP completely, or clone the Git repository. Open the app folder.
+2. Have Python 3.11 or newer and Git installed and available on PATH.
+3. Run start.cmd, or enter .\start.cmd in a terminal in that folder.
+4. Leave that terminal open. Visit http://127.0.0.1:8000 in a browser.
+   Use "start.cmd 8001" if port 8000 is occupied.
+
+The first launch installs Python dependencies. Internet access is required.
+uv is used if available; otherwise the launcher uses Python's venv and pip.
+The source environment and downloaded dependencies are not bundled.
+
+SEARCH THE INCLUDED CATALOG
+In a prepared demo ZIP, the public catalog is already indexed and keyword
+search works immediately. In a fresh Git checkout, add sources in the browser
+or run the catalog import command below after starting the app.
+To enable semantic search, click "Set up semantic search" in the sidebar.
+This downloads the local BAAI/bge-small-en-v1.5 model (about 67 MB for its
+quantized weights; the full cache can be larger). No API key or paid model
+account is required. The prepared embeddings can be reused after model setup.
+Inference runs on the local CPU. Queries and documents are not sent to a
+hosted inference service.
+
+Try these requirements:
+- MCP server tools for AI agents
+- Oracle property graph algorithms
+- Grafana Oracle telemetry metrics
+- OCI usage cost reports autonomous warehouse
+- APEX security vulnerability scanning
+- Go GORM Oracle database driver
+- Ansible playbooks Oracle Linux automation
+
+Open a result to inspect its source evidence and manifest. The sources are
+public GitHub repositories; indexing and cloning do not execute project code.
+The catalog records the revisions used for the demo. Sync checks for updates.
+
+The constellation opens actual indexed sources. Technology chips filter the
+catalog and show source counts. Switch between grid and list layouts beside
+the results; your browser remembers the layout. Press / or Ctrl/Cmd+K to focus
+search. Small screens use bottom navigation, and motion respects your system's
+reduced-motion preference.
+
+OPTIONAL LOCAL AI ANALYSIS
+1. Install Ollama from https://ollama.com/download and start it.
+2. In a terminal run: ollama pull llama3.2:3b
+3. Search in Discover, then select "Analyze reuse with Ollama".
+
+The app normally connects to Ollama at http://127.0.0.1:11434. If needed,
+launch Ollama or run "ollama serve". The app never installs Ollama or pulls
+its models automatically. Model files are not in this ZIP. The one-time
+download requires internet access; local generation speed varies by machine.
+No Oracle database, OCI credentials, or hosted model API key is required.
+
+llama3.2:3b extracts up to six requirements and assesses retrieved excerpts
+for up to three candidate repositories. Retrieval uses the original query;
+analysis does not replace the existing ranking.
+The search embedding model remains BAAI/bge-small-en-v1.5; this feature does
+not switch the index to embeddinggemma. Search works without Ollama. If local
+generation fails, its error is displayed and ordinary search stays available.
+Two generation requests can take approximately two minutes with the default
+60-second timeout per request, plus retrieval overhead. Cancel stops the
+browser waiting; backend inference already in progress may finish.
+
+The model selects numbered source excerpts. The app supplies each quote,
+repository, and line link, then checks the quote against indexed source text.
+That verifies quote provenance, not whether the model interpreted it correctly
+or whether the feature works. Missing evidence refers only to retrieved
+coverage. Inspect sources and validate the code before deciding what to reuse.
+
+Advanced settings (set before starting the app):
+- FARM_OLLAMA_URL: http://127.0.0.1:11434 by default
+- FARM_OLLAMA_MODEL: llama3.2:3b by default
+- FARM_OLLAMA_TIMEOUT_SECONDS: 60 by default
+Keep the endpoint configured to a trusted local Ollama service.
+
+WHAT IS INCLUDED
+- Python backend, browser UI, dependency definitions, and tests
+- catalogs/oracle-public.json: reproducible source list
+- data/catalog.sqlite3: prepared ZIP only; public documentation and embeddings
+- CATALOG_SOURCES.txt: prepared ZIP only; sources, revisions, license metadata
+- README.md: architecture, limits, and developer instructions
+- scripts/evaluate_retrieval.py and catalogs/retrieval-eval.json: pilot checks
+
+WHAT IS LEFT OUT
+- Virtual environments, model downloads, caches, cloned repositories
+- Machine-specific job history, HTTP response cache, and preferences
+- Environment files, credentials, and the original parent registry project
+
+CURRENT LIMITS
+This is a local prototype. It uses SQLite and local embeddings; Oracle AI
+Vector Search, OCI inference, private repository access, Codex MCP integration,
+and scheduled refresh are not implemented. Manifest feature labels are
+extracted from documentation and dependency files; optional analysis is
+generated separately by Ollama. The referenced applications have not been
+execution-verified. Only selected files are indexed. Rankings and generated
+explanations require review; unrelated queries can still produce weak matches.
+
+MEASURING RETRIEVAL
+With the app running and semantic setup complete, from the app folder:
+  .venv\Scripts\python.exe scripts\evaluate_retrieval.py --output retrieval-report.json
+This reads the API without changing the server or invoking Ollama. It reports
+Hit@3, MRR@3, known-relevant Precision@3, and unrelated-query matches, with
+per-query results and catalog revisions. By default it requires a ready model
+and complete embedding coverage. Use --allow-keyword only for a separately
+labeled keyword/mixed-mode run. A zero exit code means the run completed;
+it does not mean retrieval passed an accuracy target.
+
+The included ten positive and three unrelated queries are development pilot
+judgments, not an independent accuracy benchmark. Expected matches are not
+exhaustive. Have teammates review them and add held-out requirements before
+quoting accuracy. These metrics do not measure LLM answer correctness.
+
+ADDING THE SAME SOURCES TO A FRESH CATALOG
+With the app running, from its folder:
+  .venv\Scripts\python.exe scripts\index_catalog.py --wait
+Already indexed sources are skipped. New public repositories can also be added
+from the browser. No GitHub token is required for public reads, but GitHub's
+unauthenticated rate limits apply.
+
+START ON MACOS OR LINUX
+With Python 3.11+ and Git installed, from the extracted app folder:
+  python3 -m venv .venv
+  .venv/bin/python -m pip install -r requirements.txt
+  .venv/bin/python -m uvicorn farm.app:app --host 127.0.0.1 --port 8000
+This is the cross-platform Python launch path; automated verification for this
+handoff was performed on Windows.
+
+The application is intended for local review. Keep the default loopback bind.
